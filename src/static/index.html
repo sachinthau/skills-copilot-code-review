@@ -12,9 +12,8 @@
     />
   </head>
   <body>
-    <div class="announcement-banner">
-      📢 Activity registration is open until the end of the month. don't lose your spot!
-    </div>
+    <!-- Announcement banner will be rendered dynamically from the server -->
+    <div id="announcement-root"></div>
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
@@ -23,6 +22,10 @@
           <button id="login-button" class="icon-button">
             <span class="user-icon">👤</span>
             <span>Login</span>
+          </button>
+          <button id="manage-announcements-button" class="icon-button hidden" title="Manage announcements">
+            <span>📣</span>
+            <span>Announcements</span>
           </button>
           <div id="user-info" class="hidden">
             <span id="display-name"></span>
@@ -134,6 +137,23 @@
           <button type="submit">Login</button>
         </form>
         <div id="login-message" class="hidden message"></div>
+      </div>
+    </div>
+
+    <!-- Announcements Manager Modal -->
+    <div id="announcements-modal" class="modal hidden">
+      <div class="modal-content" style="max-width: 720px; width: 95%;">
+        <span class="close-announcements-modal">&times;</span>
+        <h3>Manage Announcements</h3>
+        <div id="announcements-manager">
+          <div style="display:flex; gap:12px; margin-bottom:12px; align-items:center;">
+            <button id="add-announcement-button">New Announcement</button>
+            <div style="flex:1"></div>
+          </div>
+          <div id="announcements-list">
+            <!-- list populated by JS -->
+          </div>
+        </div>
       </div>
     </div>
 
